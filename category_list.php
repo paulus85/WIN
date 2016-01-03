@@ -6,7 +6,7 @@ use App\Utils;
 
 // Retrieving data
 $db = \App\Factory::getDatabaseConnection();
-$res = $db->query('SELECT name, count(*) nbEvents FROM categories,events WHERE events.category_id = categories.id GROUP BY events.category_id;')->fetchAll();
+$res = $db->query('SELECT name,count(events.id) nbEvents FROM categories LEFT JOIN events ON categories.id = events.category_id GROUP BY category_id,name;')->fetchAll();
 
 Utils::dd($res);
 require ('header.php');
@@ -30,8 +30,5 @@ require ('header.php');
     </ul>
 
 <?php
-
-
-
 require ('footer.php');
 ?>

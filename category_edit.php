@@ -21,7 +21,7 @@ require ('header.php');
 ?>
 
 <h2>Éditer catégorie</h2>
-<form action="category_register.php?id=<?= $categoryId ?>" method="POST" role="form" id="editform">
+<form action="category_register.php?id=<?= $categoryId ?>" method="POST" role="form" id="editform" data-id="<?= $categoryId ?>">
     <div class="form-group">
         <label for="">Nom de la catégorie</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Nom">

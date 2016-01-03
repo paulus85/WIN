@@ -1,3 +1,4 @@
+<?php var_dump(isset($_GET['categoryid'])); ?>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -8,7 +9,8 @@
 <script>
     $(document).on("click", "#deleteBtn", function(e) {
         bootbox.confirm("Sure?", function(result) {
-            console.log(result);
+            var catId = $("form#editform").data("id");
+            window.location = "category_delete.php?id="+catId;
         });
     });
 </script>
