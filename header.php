@@ -48,3 +48,8 @@
 </nav>
 
 <div class="container">
+    <?php if(\App\Session::getInstance()->hasFlashes()): ?>
+        <?php foreach(\App\Session::getInstance()->getFlashes() as $cat=>$message) : ?>
+            <div class="alert alert-<?= $cat ?>"><?= $message ?></div>
+        <?php endforeach; ?>
+    <?php endif; ?>

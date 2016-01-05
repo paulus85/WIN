@@ -15,5 +15,8 @@ if (isset($_GET['id'])) {
     }
 } else {
     // Flash : nothing happened
+    \App\Session::getInstance()->addFlash('Error in parameter','danger');
+
 }
 header('Location:category_list.php');
+exit();
