@@ -4,11 +4,12 @@ use App\Factory;
 use App\Utils;
 
 if(isset($_GET['id']) && isset($_POST['name'])) {
+    // TODO : changer les paramètres en POST
     $name = $_POST['name'];
     $id = $_GET['id'];
 
-    $res = Factory::getDatabaseConnection()->query("UPDATE categories SET name = ? WHERE id = ?",[$name,$id])->rowCount();
-
+    $res = Factory::getDatabaseConnection()->query("UPDATE events SET name = ? WHERE id = ?",[$name,$id])->rowCount();
+// TODO
     if ($res == 0) {
         //No update done --> Flash error
         \App\Session::getInstance()->addFlash('Aucune mise à jour faite dans la base.','danger');

@@ -12,11 +12,13 @@ if($categoryId) {
     $res = Factory::getDatabaseConnection()->query('SELECT name FROM categories WHERE id = ?',[$categoryId])->fetch();
     if (!$res) {
         //Flash error
+        \App\Session::getInstance()->addFlash('Erreur de requête dans la base','danger');
         header('Location:category_list.php');
     } else {
         // Display the page
     }
 } else {
+    \App\Session::getInstance()->addFlash('Erreur d\'adresse','danger');
     header('Location:category_list.php');
 }
 

@@ -13,6 +13,7 @@ class Factory
 {
 
     static $db;
+    static $formatter;
 
     public static function getDatabaseConnection(){
         if(!self::$db){
@@ -20,5 +21,16 @@ class Factory
         }
         return self::$db;
     }
+
+    public static function getFormatter(){
+        if(!self::$formatter){
+            self::$formatter = new \IntlDateFormatter('fr_FR', \IntlDateFormatter::LONG,
+                \IntlDateFormatter::NONE,
+                'Europe/Paris',
+                \IntlDateFormatter::GREGORIAN);
+        }
+        return self::$formatter;
+    }
+
 
 }
