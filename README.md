@@ -16,6 +16,7 @@ Quick & Dirty PHP app to manage events related to categories
 - [ ] Other stuff
 
 ### For further iterations
-- [ ] Use a PHP framework instead vanilla PHP
+- [ ] Setting DBAL (or ORM after) (cf. Doctrine)
+- [ ] Use a PHP framework instead vanilla PHP (cf. Silex)
 - [ ] RESTfull API 
 - [ ] iOS app consuming API info
