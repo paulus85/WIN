@@ -1,3 +1,8 @@
+<?php $session = \App\Session::getInstance();
+setlocale(LC_TIME,'fr_FR');
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -35,21 +40,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">What is next?</a>
+            <a class="navbar-brand" href="index.php">What is next?</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.html">Events</a></li>
-                <li class="active"><a href="#">Catégories</a></li>
-                <li><a href="about.html">À propos</a></li>
+                <li><a href="index.php">Events</a></li>
+                <li><a href="category_list.php">Catégories</a></li>
+                <li><a href="about.php">À propos</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
 <div class="container">
-    <?php if(\App\Session::getInstance()->hasFlashes()): ?>
-        <?php foreach(\App\Session::getInstance()->getFlashes() as $cat=>$message) : ?>
+    <?php if($session->hasFlashes()): ?>
+        <?php foreach($session->getFlashes() as $cat=>$message) : ?>
             <div class="alert alert-<?= $cat ?>"><?= $message ?></div>
         <?php endforeach; ?>
     <?php endif; ?>
