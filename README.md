@@ -13,7 +13,7 @@ Quick & Dirty PHP app to manage events related to categories
 - [x] Set flash messages
 - [ ] Do trigger on database to let user delete a category and replace associated event with a default category instead of the original one
 - [ ] Handle change in orthograph when displaying 1 or 0 "event" on category_list
-- [ ] Sort events by date
+- [x] Sort events by date
 - [ ] Group all requests in one class in order to avoid SQL statements in view code
 - [ ] Other stuff
 
